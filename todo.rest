@@ -1,0 +1,87 @@
+POST http://localhost:3000/api/users/register
+Content-Type: application/json
+
+{
+    "username":"cobauser",
+    "password":"cobapass",
+    "name":"coba User",
+    "email":"coba@example.com"
+}
+
+###
+POST http://localhost:3000/api/users/login
+Content-Type: application/json
+
+{
+    "username":"cobauser",
+    "password":"cobapass"
+}
+
+###
+POST http://localhost:3000/api/todos
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQyNjU4ZDJhLTgwZjMtNDZmZS05MmNhLTQyYmY1YTJjMjZmNyIsInVzZXJuYW1lIjoiY29iYXVzZXIiLCJpYXQiOjE3NTQ2NDQ4NTMsImV4cCI6MTc1NDY0ODQ1M30.dKIIMopN9MhrdyL4gLWa5QfKAH33kY5s1RlQjay63fo
+
+{
+    "title":"Belajar Express",
+    "description":"Mempelajari route",
+    "completed":false
+}
+
+###
+POST http://localhost:3000/api/todos
+Content-Type: application/json
+
+{
+    "title":"Belajar Express",
+    "description":"Mempelajari route",
+    "completed":false
+}
+
+###
+GET http://localhost:3000/api/todos
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQyNjU4ZDJhLTgwZjMtNDZmZS05MmNhLTQyYmY1YTJjMjZmNyIsInVzZXJuYW1lIjoiY29iYXVzZXIiLCJpYXQiOjE3NTQ2NDQ4NTMsImV4cCI6MTc1NDY0ODQ1M30.dKIIMopN9MhrdyL4gLWa5QfKAH33kY5s1RlQjay63fo
+
+
+###
+GET http://localhost:3000/api/todos/c40a2882-3f7c-4746-8cf8-7043ba333e2f
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQyNjU4ZDJhLTgwZjMtNDZmZS05MmNhLTQyYmY1YTJjMjZmNyIsInVzZXJuYW1lIjoiY29iYXVzZXIiLCJpYXQiOjE3NTQ2NDQ4NTMsImV4cCI6MTc1NDY0ODQ1M30.dKIIMopN9MhrdyL4gLWa5QfKAH33kY5s1RlQjay63fo
+
+###
+PUT http://localhost:3000/api/todos/c40a2882-3f7c-4746-8cf8-7043ba333e2f
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQyNjU4ZDJhLTgwZjMtNDZmZS05MmNhLTQyYmY1YTJjMjZmNyIsInVzZXJuYW1lIjoiY29iYXVzZXIiLCJpYXQiOjE3NTQ2NDQ4NTMsImV4cCI6MTc1NDY0ODQ1M30.dKIIMopN9MhrdyL4gLWa5QfKAH33kY5s1RlQjay63fo
+
+{
+    "title": "coba",
+    "description": "cs",
+    "completed": true
+}
+
+
+###
+GET http://localhost:3000/api/profile
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQyNjU4ZDJhLTgwZjMtNDZmZS05MmNhLTQyYmY1YTJjMjZmNyIsInVzZXJuYW1lIjoiY29iYXVzZXIiLCJpYXQiOjE3NTQ2NDQ4NTMsImV4cCI6MTc1NDY0ODQ1M30.dKIIMopN9MhrdyL4gLWa5QfKAH33kY5s1RlQjay63fo
+
+###
+PUT http://localhost:3000/api/profile
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQyNjU4ZDJhLTgwZjMtNDZmZS05MmNhLTQyYmY1YTJjMjZmNyIsInVzZXJuYW1lIjoiY29iYXVzZXIiLCJpYXQiOjE3NTQ2NDQ4NTMsImV4cCI6MTc1NDY0ODQ1M30.dKIIMopN9MhrdyL4gLWa5QfKAH33kY5s1RlQjay63fo
+
+{
+    "username":"userbaru",
+    "name":"User Baru",
+    "email":"baru@example.com"
+}
+
+###
+PUT http://localhost:3000/api/profile/password
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQyNjU4ZDJhLTgwZjMtNDZmZS05MmNhLTQyYmY1YTJjMjZmNyIsInVzZXJuYW1lIjoiY29iYXVzZXIiLCJpYXQiOjE3NTQ2NDQ4NTMsImV4cCI6MTc1NDY0ODQ1M30.dKIIMopN9MhrdyL4gLWa5QfKAH33kY5s1RlQjay63fo
+
+{
+    "password": "passbaru"
+}

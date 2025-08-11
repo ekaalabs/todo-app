@@ -1,0 +1,7 @@
+init-db
+node_modules
+.dockerignore
+compose.yaml
+Dockerfile
+package-lock.json
+test.rest

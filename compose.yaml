@@ -1,0 +1,51 @@
+services:
+    todo_app:
+        container_name: todo_app
+        build:
+            context: .
+            dockerfile: Dockerfile
+        image: todo_app:0.1
+        restart: always
+        environment:
+            SRV_HOST: ${SRV_HOST}
+            SRV_PORT: ${SRV_HOST}
+        ports:
+            - ${SRV_PORT}:3000
+        networks:
+            - cerebro
+
+    todo_db:
+        container_name: todo_db
+        image: mysql:8.2.0
+        restart: always
+        environment:
+            MYSQL_ROOT_PASSWORD: ${DB_PASS}
+            MYSQL_USER: ${DB_USER}
+            MYSQL_PASSWORD: ${DB_PASS}
+            MYSQL_DATABASE: ${DB_NAME}
+            TZ: Asia/Makassar
+        ports:
+            - ${DB_PORT}:3306
+        volumes:
+            - ./init-db:/docker-entrypoint-initdb.d
+        networks:
+            - cerebro
+
+    phpmyadmin:
+        container_name: phpmyadmin
+        image: phpmyadmin/phpmyadmin
+        restart: always
+        ports:
+            - '8080:80'
+        environment:
+            PMA_HOST: todo_db
+            PMA_PORT: 3306
+            MYSQL_ROOT_PASSWORD: ${DB_PASS}
+        networks:
+            - cerebro
+        depends_on:
+            - todo_db
+
+networks:
+    cerebro:
+        external: true
